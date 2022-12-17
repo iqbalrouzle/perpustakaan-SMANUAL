@@ -15,7 +15,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <style>
         body {
-            background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b);
+            /* background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b); */
             background-repeat: no-repeat;
         }
     </style>
@@ -23,7 +23,7 @@
 
 <body>
     <div class="layer"></div>
-    <main class="page-center">
+    <main class="page-center" style="background-image: url('{{ asset('img/SMA/halaman.jpg') }}'); background-size: cover">
         <article class="sign-up">
             <form class="sign-up-form form" action="{{ route('signup') }}" method="POST">
                 @csrf
