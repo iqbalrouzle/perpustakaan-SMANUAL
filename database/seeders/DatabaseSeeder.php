@@ -24,9 +24,9 @@ class DatabaseSeeder extends Seeder
         $admin->save();
 
         $admin = new User();
-        $admin->name = "Admin Utama";
-        $admin->email = "ujle@admin.com";
-        $admin->password = Hash::make("qweqweqwe");
+        $admin->name = "Ujle";
+        $admin->email = "coba@admin.com";
+        $admin->password = Hash::make("smanual");
         $admin->peran = "admin";
         $admin->save();
     }

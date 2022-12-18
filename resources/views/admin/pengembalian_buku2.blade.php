@@ -52,7 +52,7 @@
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link  " href="{{ route('view.dashboard2.user') }}">
+                    <a class="nav-link  " href="{{ route('view.dashboard2.admin') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             💻
@@ -109,7 +109,7 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>Riwayat Peminjaman</h6>
+                            <h6>Riwayat Pengembalian</h6>
 
                             <div class="row">
                                 {{-- <div class="col-2">
@@ -210,7 +210,7 @@
                                             @endforeach
                                         @else
                                             <div>
-                                                <p class="card-text">Buku Tidak Ada!</p>
+                                                <p class="card-text">Buku Tidak Ada Yang Di Pinjam!</p>
                                             </div>
                                 @endif
                                 </tbody>
