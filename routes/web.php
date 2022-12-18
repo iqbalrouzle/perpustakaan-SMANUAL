@@ -53,3 +53,4 @@ Route::get('/pinjam2', [BookController::class, 'viewPinjamBuku2'])->name('view.p
 Route::post('/pinjam2/{peminjaman}', [BookController::class, 'hapusPeminjaman'])->name('pinjam.buku.2')->middleware('auth');
 Route::get('/pengembalian2', [BookController::class, 'viewPengembalianBuku2'])->name('view.pengembalian.buku.2')->middleware('auth');
 Route::post('/pengembalian2/{pengembalian}', [BookController::class, 'pengembalianBuku'])->name('pengembalian.buku.2')->middleware('auth');
+Route::post('hapuspengembalian/en2/{pengembalian}', [BookController::class, 'hapusPengembalian'])->name('hapuspengembalian.buku.2')->middleware('auth');;

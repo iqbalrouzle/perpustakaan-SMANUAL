@@ -160,7 +160,7 @@
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
                                 @if ($buku->isNotEmpty())
-                                </table>
+                                    </table>
                                     <table class="table table-striped table-hover align-items-center mb-0">
                                         <thead>
                                             <tr>
@@ -169,40 +169,40 @@
                                                     No.</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🧩 Nama Buku</th>
+                                                    Nama Buku</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    📧 Nama Pengarang</th>
+                                                    Nama Pengarang</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Penerbit</th>
+                                                    Penerbit</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Tahun Terbit</th>
+                                                    Tahun Terbit</th>
                                                 <th
                                                     class="text-end text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🔧 Aksi</th>
+                                                    Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($buku as $pgw)
+                                            @foreach ($buku as $pgl)
                                                 <tr>
                                                     <td class="text-center text-dark font-weight-bold">
                                                         {{ $loop->index + 1 }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->nama_buku }}</td>
+                                                        {{ $pgl->nama_buku }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->pengarang }}</td>
+                                                        {{ $pgl->pengarang }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->penerbit }}</td>
+                                                        {{ $pgl->penerbit }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->tahun_terbit }}</td>
+                                                        {{ $pgl->tahun_terbit }}</td>
                                                     <td class="text-end">
                                                         <a class="btn btn-warning btn-sm text-dark"
                                                             style="color: #F6F5FC"
-                                                            href="{{ route('view.edit.buku.2', $pgw->id) }}">🔍
+                                                            href="{{ route('view.edit.buku.2', $pgl->id) }}">🔍
                                                             Edit</a>
-                                                        <form action={{ route('hapus.buku', $pgw->id) }}
+                                                        <form action={{ route('hapus.buku', $pgl->id) }}
                                                             method="POST">
                                                             @csrf
                                                             <button class=" btn btn-danger btn-sm">

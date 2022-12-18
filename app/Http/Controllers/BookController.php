@@ -231,8 +231,24 @@ class BookController extends Controller
         $user = $request->user();
         $peminjaman = Peminjaman::where('id', $id)->first();
 
+
         try {
             $peminjaman->delete();
+            return back()->with('success', 'Berhasil menghapus');
+        } catch (\Throwable $th) {
+            dd($th);
+            return back()->with('error', 'Gagal menghapus');
+        }
+    }
+
+    public function hapusPengembalian(Request $request, $id)
+    {
+        $user = $request->user();
+        $pengembalian = Pengembalian::where('id', $id)->first();
+
+
+        try {
+            $pengembalian->delete();
             return back()->with('success', 'Berhasil menghapus');
         } catch (\Throwable $th) {
             dd($th);

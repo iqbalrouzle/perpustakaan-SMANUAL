@@ -42,7 +42,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-12 text-center mx-auto">
-                            <h1 class="text-white mt-5">Tambah Buku Baru</h1>
+                            <h1 class="text-white mt-5">Tambah Buku</h1>
                             <p class="text-lead text-white mb-5">Silakan isi data buku berikut ini!</p>
                             <div class="container">
                                 <div class="row mt-lg-n1 mt-md-n11 mt-n10">

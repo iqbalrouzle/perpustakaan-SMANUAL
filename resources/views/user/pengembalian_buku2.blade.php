@@ -109,7 +109,7 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>Daftar Buku</h6>
+                            <h6>Riwayat Peminjaman</h6>
 
                             <div class="row">
                                 {{-- <div class="col-2">
@@ -168,29 +168,26 @@
                                                     No.</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🧩 Nama Buku</th>
+                                                    Nama Buku</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    📧 Nama Pengarang</th>
+                                                    Nama Pengarang</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Penerbit</th>
-                                                <th
-                                                    class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Tahun Terbit</th>
+                                                    Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($pengembalian as $pgw)
+                                            @foreach ($pengembalian as $pgl)
                                                 <tr>
                                                     <td class="text-center text-dark font-weight-bold">
                                                         {{ $loop->index + 1 }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->peminjaman->buku->nama_buku }}</td>
+                                                        {{ $pgl->peminjaman->buku->nama_buku }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->user->name }}</td>
+                                                        {{ $pgl->user->name }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        @if ($pgw->status == 0)
+                                                        @if ($pgl->status == 0)
                                                             Belum Dikembalikan
                                                         @else
                                                             Sudah Dikembaliklam

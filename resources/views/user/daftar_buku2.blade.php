@@ -164,36 +164,36 @@
                                                     No.</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🧩 Nama Buku</th>
+                                                    Nama Buku</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    📧 Nama Pengarang</th>
+                                                    Nama Pengarang</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Penerbit</th>
+                                                    Penerbit</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Tahun Terbit</th>
+                                                    Tahun Terbit</th>
                                                 <th
                                                     class="text-end text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🔧 Aksi</th>
+                                                    Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($buku as $pgw)
+                                            @foreach ($buku as $bk)
                                                 <tr>
                                                     <td class="text-center text-dark font-weight-bold">
                                                         {{ $loop->index + 1 }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->nama_buku }}</td>
+                                                        {{ $bk->nama_buku }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->pengarang }}</td>
+                                                        {{ $bk->pengarang }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->penerbit }}</td>
+                                                        {{ $bk->penerbit }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->tahun_terbit }}</td>
+                                                        {{ $bk->tahun_terbit }}</td>
                                                     <td class="text-end">
-                                                        <form action={{ route('pinjam.buku', $pgw->id) }}
+                                                        <form action={{ route('pinjam.buku', $bk->id) }}
                                                             method="POST">
                                                             @csrf
                                                             <button class=" btn btn-danger btn-sm">

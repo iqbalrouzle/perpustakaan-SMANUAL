@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="{{ route('dashboard.admin2') }}" class="nav-item nav-link"><i
+                    <a href="{{ route('dashboard.user2') }}" class="nav-item nav-link"><i
                             class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="{{ route('view.buku2') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Buku</a>
                     <a href="{{ route('view.pinjam.buku2') }}" class="nav-item nav-link active"><i
@@ -87,25 +87,25 @@
                                 <thead>
                                     <tr class="text-white">
                                         <th scope="col">No.</th>
-                                        <th scope="col">📨 Nama Buku</th>
-                                        <th scope="col">🔢 Nama Pengarang</th>
-                                        <th scope="col">⭐ Penerbit</th>
-                                        <th scope="col">📆 Tahun Terbit</th>
+                                        <th scope="col">Nama Buku</th>
+                                        <th scope="col">Nama Pengarang</th>
+                                        <th scope="col">Penerbit</th>
+                                        <th scope="col">Tahun Terbit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        @foreach ($peminjaman as $pgw)
+                                        @foreach ($peminjaman as $pmj)
                                             <td class="text-center text-dark font-weight-bold">
                                                 {{ $loop->index + 1 }}</td>
                                             <td class="text-start text-dark font-weight-bold">
-                                                {{ $bk->book_id }}</td>
+                                                {{ $pmj->book_id }}</td>
                                             <td class="text-start text-dark font-weight-bold">
-                                                {{ $bk->tanggal_peminjaman }}</td>
+                                                {{ $pmj->tanggal_peminjaman }}</td>
                                             <td class="text-start text-dark font-weight-bold">
-                                                {{ $bk->tanggal_pengembalian }}</td>
+                                                {{ $pmj->tanggal_pengembalian }}</td>
                                             <td class="text-start text-dark font-weight-bold">
-                                                {{ $bk->denda }}</td>
+                                                {{ $pmj->denda }}</td>
                                     </tr>
                     @endforeach
                     </tbody>

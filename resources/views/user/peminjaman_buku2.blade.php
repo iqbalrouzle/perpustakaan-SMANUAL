@@ -39,7 +39,7 @@
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="{{ route('view.dashboard2.user') }}" target="_blank">
-                <img src="../images/undip.png" class="navbar-brand-img h-100" alt="logo" width="15%"
+                <img src="../img/SMA/logo smanual.png" class="navbar-brand-img h-100" alt="logo" width="15%"
                     height="40%">
                 <span class="ms-1 fs-5 font-weight-bold">Dasbor User</span>
             </a>
@@ -52,7 +52,7 @@
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link  " href="{{ route('view.dashboard2.admin') }}">
+                    <a class="nav-link  " href="{{ route('view.dashboard2.user') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             💻
@@ -164,22 +164,22 @@
                                                     No.</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🧩 Nama Buku</th>
+                                                    Nama Buku</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    📧 Nama Peminjam</th>
+                                                    Nama Peminjam</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Tanggal Peminjaman</th>
+                                                    Tanggal Peminjaman</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Tanggal Pengembalian</th>
+                                                    Tanggal Pengembalian</th>
                                                 <th
                                                     class="text-end text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🔧 Denda</th>
+                                                    Sisa Hari</th>
                                                 <th
                                                     class="text-end text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🔧 Aksi</th>
+                                                    Aksi</th>
                                                 {{-- <th
                                                     class="text-end text-uppercase text-dark text-xs font-weight-bolder  ps-2">
                                                     🔧 Aksi</th> --}}
