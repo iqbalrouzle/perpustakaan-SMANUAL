@@ -15,7 +15,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <style>
         body {
-            background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b);
+            /* background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b); */
             background-repeat: no-repeat;
         }
     </style>
@@ -23,7 +23,8 @@
 
 <body>
     <div class="layer"></div>
-    <main class="page-center">
+    <main class="page-center"
+        style="background-image: url('{{ asset('img/SMA/halaman.jpg') }}'); background-size: cover">
         <article class="sign-up">
             <form class="sign-up-form form" action="{{ route('signup') }}" method="POST">
                 @csrf
@@ -46,16 +47,18 @@
                 @endif
                 <label class="form-label-wrapper">
                     <h1 class="sign-up__title">Sign Up</h1>
-            <p class="sign-up__subtitle">Start creating the best possible user experience for you customers</p>
-                    <p class="form-label">Name</p>
+                    <p class="sign-up__subtitle">Start creating the best possible user experience for you customers</p>
+                    </div>
+                    <p class="form-label">Name <span class="fw-bold" style="color: red">*</span></p>
                     <input class="form-input" type="text" placeholder="Enter your name" name="name" required>
                 </label>
                 <label class="form-label-wrapper">
-                    <p class="form-label">Email</p>
+                    </div>
+                    <p class="form-label">Email <span class="fw-bold" style="color: red">*</span></p>
                     <input class="form-input" type="email" placeholder="Enter your email" name="email" required>
                 </label>
                 <label class="form-label-wrapper">
-                    <p class="form-label">Password</p>
+                    <p class="form-label">Password <span class="fw-bold" style="color: red">*</span></p>
                     <input class="form-input" type="password" placeholder="Enter your password" name="password"
                         required>
                 </label>

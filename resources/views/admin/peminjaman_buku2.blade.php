@@ -39,7 +39,7 @@
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="{{ route('view.dashboard2.admin') }}" target="_blank">
-                <img src="../images/undip.png" class="navbar-brand-img h-100" alt="logo" width="15%"
+                <img src="../img/SMA/logo smanual.png" class="navbar-brand-img h-100" alt="logo" width="15%"
                     height="40%">
                 <span class="ms-1 fs-5 font-weight-bold">Dasbor Admin</span>
             </a>
@@ -85,15 +85,6 @@
                             🎯
                         </div>
                         <span class="nav-link-text ms-1">Pengembalian</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link  " href="/">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            🏠
-                        </div>
-                        <span class="nav-link-text ms-1">Beranda</span>
                     </a>
                 </li>
             </ul>
@@ -197,15 +188,15 @@
                                                     <td class="text-center text-dark font-weight-bold">
                                                         {{ $loop->index + 1 }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->user_id }}</td>
+                                                        {{ $pgw->buku->nama_buku }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->book_id }}</td>
+                                                        {{ $pgw->user->name }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
                                                         {{ $pgw->tanggal_peminjaman }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
                                                         {{ $pgw->tanggal_pengembalian }}</td>
                                                     <td class="text-end">
-                                                        <form action={{ route('hapus.buku', $pgw->id) }}
+                                                        <form action={{ route('pinjam.buku.2', $pgw->id) }}
                                                             method="POST">
                                                             @csrf
                                                             <button class=" btn btn-danger btn-sm">

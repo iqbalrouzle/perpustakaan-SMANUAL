@@ -19,4 +19,14 @@ class Peminjaman extends Model
         'tanggal_pengembalian',
         'denda',
     ];
+
+    public function buku()
+    {
+        return $this->belongsTo(Book::class, 'book_id', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

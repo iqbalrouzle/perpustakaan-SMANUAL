@@ -87,15 +87,6 @@
                         <span class="nav-link-text ms-1">Pengembalian</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link  " href="/">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            🏠
-                        </div>
-                        <span class="nav-link-text ms-1">Beranda</span>
-                    </a>
-                </li>
             </ul>
         </div>
         {{-- SIDE NAVBAR END --}}
@@ -168,56 +159,42 @@
 
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
-                                @if ($peminjaman->isNotEmpty())
+                                @if ($pengembalian->isNotEmpty())
                                     <table class="table table-striped table-hover align-items-center mb-0">
                                         <thead>
                                             <tr>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    📍</th>
+                                                    No.</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🧩 Nama Pegawai</th>
+                                                    🧩 Nama Buku</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    📧 Email Pegawai</th>
+                                                    📧 Nama Pengarang</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Jabatan Pegawai</th>
+                                                    🥇 Penerbit</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Jabatan Pegawai</th>
-                                                <th
-                                                    class="text-end text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🔧 Aksi</th>
+                                                    🥇 Tahun Terbit</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($peminjaman as $pgw)
+                                            @foreach ($pengembalian as $pgw)
                                                 <tr>
                                                     <td class="text-center text-dark font-weight-bold">
                                                         {{ $loop->index + 1 }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->nama_buku }}</td>
+                                                        {{ $pgw->peminjaman->buku->nama_buku }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->pengarang }}</td>
+                                                        {{ $pgw->user->name }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->penerbit }}</td>
-                                                    <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->tahun_terbit }}</td>
-                                                    <td class="text-end">
-                                                        <a class="btn btn-warning btn-sm text-dark"
-                                                            style="color: #F6F5FC"
-                                                            href="{{ route('view.edit.buku.2', $pgw->id) }}">🔍
-                                                            Edit</a>
-                                                        <form action={{ route('hapus.buku', $pgw->id) }}
-                                                            method="POST">
-                                                            @csrf
-                                                            <button class=" btn btn-danger btn-sm">
-                                                                <i class="fa fa-trash"></i>
-                                                                Hapus
-                                                            </button>
-                                                        </form>
+                                                        @if ($pgw->status == 0)
+                                                            Belum Dikembalikan
+                                                        @else
+                                                            Sudah Dikembaliklam
+                                                        @endif
                                                     </td>
                                                 </tr>
                                             @endforeach

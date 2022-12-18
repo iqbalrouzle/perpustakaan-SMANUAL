@@ -87,15 +87,6 @@
                         <span class="nav-link-text ms-1">Pengembalian</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link  " href="/">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            🏠
-                        </div>
-                        <span class="nav-link-text ms-1">Beranda</span>
-                    </a>
-                </li>
             </ul>
         </div>
         {{-- SIDE NAVBAR END --}}
@@ -118,7 +109,7 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>Daftar Buku</h6>
+                            <h6>Riwayat Pinjam Buku</h6>
 
                             <div class="row">
                                 {{-- <div class="col-2">

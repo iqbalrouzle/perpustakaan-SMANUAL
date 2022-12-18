@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Tambah Buku | Surat UPT</title>
+    <title>Tambah Buku | Perpustakaan SMA NU AL MA'RUF</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('img/SMA/logo smanual.png') }}">
@@ -43,13 +43,13 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-12 text-center mx-auto">
                             <h1 class="text-white mt-5">Tambah Buku Baru</h1>
-                            <p class="text-lead text-white mb-5">Silakan isi data pegawai berikut ini!</p>
+                            <p class="text-lead text-white mb-5">Silakan isi data buku berikut ini!</p>
                             <div class="container">
                                 <div class="row mt-lg-n1 mt-md-n11 mt-n10">
                                     <div class="col-xl-10 col-lg-5 col-md-7 mx-auto">
                                         <div class="card z-index-0">
                                             <div class="card-header text-center pt-4">
-                                                <h5>Pegawai Baru</h5>
+                                                <h5>Buku Baru</h5>
                                             </div>
                                             <div class="card-body">
                                                 <form action="{{ route('tambah.buku') }}" autocapitalize="off"
@@ -90,8 +90,6 @@
                                                                 class="fw-bold" style="color: red">*</span></label>
                                                         <input type="text" class="form-control" name="penerbit"
                                                             required>
-                                                        <label class="fs-8 fw-light" for="penerbit">Minimal 8
-                                                            Karakter</label>
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="tahun_terbit" class="form-label fs-6">Tahun

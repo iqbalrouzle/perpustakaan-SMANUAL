@@ -42,14 +42,14 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-12 text-center mx-auto">
-                            <h1 class="text-white mt-5">Edit Buku Baru</h1>
-                            <p class="text-lead text-white mb-5">Silakan isi data pegawai berikut ini!</p>
+                            <h1 class="text-white mt-5">Edit Buku</h1>
+                            <p class="text-lead text-white mb-5">Silakan isi data edit berikut ini!</p>
                             <div class="container">
                                 <div class="row mt-lg-n1 mt-md-n11 mt-n10">
                                     <div class="col-xl-10 col-lg-5 col-md-7 mx-auto">
                                         <div class="card z-index-0">
                                             <div class="card-header text-center pt-4">
-                                                <h5>Pegawai Baru</h5>
+                                                <h5>Edit Buku</h5>
                                             </div>
                                             <div class="card-body">
                                                 <form action="{{ route('edit.buku', $buku->id) }}" autocapitalize="off"

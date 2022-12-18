@@ -87,15 +87,6 @@
                         <span class="nav-link-text ms-1">Pengembalian</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link  " href="/">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            🏠
-                        </div>
-                        <span class="nav-link-text ms-1">Beranda</span>
-                    </a>
-                </li>
             </ul>
         </div>
         {{-- SIDE NAVBAR END --}}
@@ -176,16 +167,19 @@
                                                     🧩 Nama Buku</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    📧 Nama Pengarang</th>
+                                                    📧 Nama Peminjam</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Penerbit</th>
+                                                    🥇 Tanggal Peminjaman</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    🥇 Tahun Terbit</th>
+                                                    🥇 Tanggal Pengembalian</th>
                                                 <th
                                                     class="text-end text-uppercase text-dark text-xs font-weight-bolder  ps-2">
                                                     🔧 Denda</th>
+                                                <th
+                                                    class="text-end text-uppercase text-dark text-xs font-weight-bolder  ps-2">
+                                                    🔧 Aksi</th>
                                                 {{-- <th
                                                     class="text-end text-uppercase text-dark text-xs font-weight-bolder  ps-2">
                                                     🔧 Aksi</th> --}}
@@ -197,15 +191,31 @@
                                                     <td class="text-center text-dark font-weight-bold">
                                                         {{ $loop->index + 1 }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->user_id }}</td>
+                                                        {{ $pgw->buku->nama_buku }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgw->book_id }}</td>
+                                                        {{ $pgw->user->name }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
                                                         {{ $pgw->tanggal_peminjaman }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
                                                         {{ $pgw->tanggal_pengembalian }}</td>
+                                                    <td class="text-start text-dark font-weight-bold">
+                                                        @if (now()->diffInDays($pgw->tanggal_pengembalian) >= 0)
+                                                            {!! now()->diffInDays($pgw->tanggal_pengembalian) !!} hari lagi
+                                                        @else
+                                                            SUDAH MELEBIHI DEADLINE!!!
+                                                        @endif
+                                                    </td>
                                                     <td class="text-end">
-                                                        {{-- <a class="btn btn-warning btn-sm text-dark"
+                                                        <form action={{ route('pengembalian.buku.2', $pgw->id) }}
+                                                            method="POST">
+                                                            @csrf
+                                                            <button class=" btn btn-danger btn-sm">
+                                                                <i class="fa fa-trash"></i>
+                                                                Kembalikan Buku
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                    {{-- <a class="btn btn-warning btn-sm text-dark"
                                                             style="color: #F6F5FC"
                                                             href="{{ route('view.edit.buku.2', $pgw->id) }}">🔍
                                                             Edit</a>

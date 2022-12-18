@@ -87,15 +87,6 @@
                         <span class="nav-link-text ms-1">Pengembalian</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link  " href="/">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            🏠
-                        </div>
-                        <span class="nav-link-text ms-1">Beranda</span>
-                    </a>
-                </li>
             </ul>
         </div>
         {{-- SIDE NAVBAR END --}}
@@ -169,6 +160,7 @@
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
                                 @if ($buku->isNotEmpty())
+                                </table>
                                     <table class="table table-striped table-hover align-items-center mb-0">
                                         <thead>
                                             <tr>

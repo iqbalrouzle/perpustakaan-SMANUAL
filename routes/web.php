@@ -50,4 +50,6 @@ Route::get('/buku2', [BookController::class, 'viewDaftarBuku2'])->name('view.buk
 Route::get('/buku/create2', [BookController::class, 'viewTambahBuku2'])->name('view.tambah.buku.2')->middleware(['auth', 'admin']);
 Route::get('/buku/edit2/{buku}', [BookController::class, 'viewEditBuku2'])->name('view.edit.buku.2')->middleware(['auth', 'admin']);
 Route::get('/pinjam2', [BookController::class, 'viewPinjamBuku2'])->name('view.pinjam.buku.2')->middleware('auth');
+Route::post('/pinjam2/{peminjaman}', [BookController::class, 'hapusPeminjaman'])->name('pinjam.buku.2')->middleware('auth');
 Route::get('/pengembalian2', [BookController::class, 'viewPengembalianBuku2'])->name('view.pengembalian.buku.2')->middleware('auth');
+Route::post('/pengembalian2/{pengembalian}', [BookController::class, 'pengembalianBuku'])->name('pengembalian.buku.2')->middleware('auth');
