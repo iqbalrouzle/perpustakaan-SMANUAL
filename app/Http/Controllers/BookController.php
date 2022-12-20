@@ -254,4 +254,18 @@ class BookController extends Controller
             return back()->with('error', 'Gagal menghapus');
         }
     }
+
+    // SISWA
+    public function viewSiswa()
+    {
+        return view('admin.siswa', [
+            'user' => User::where('peran', 'user')->get()
+        ]);
+    }
+
+    public function destroy(User $user)
+    {
+        User::destroy($user->id);
+        return redirect('/admin/siswa')->with('success', 'Data Siswa Berhasil Dihapus');
+    }
 }

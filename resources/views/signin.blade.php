@@ -49,7 +49,7 @@
                 @endif
                 <label class="form-label-wrapper">
                     <h1 class="sign-up__title">LOGIN</h1>
-                    <p class="sign-up__subtitle ">Sign in to your account to continue</p>
+                    <p class="sign-up__subtitle ">Masukkan data yang sudah didaftarkan</p>
 
                     <p class="form-label">Email</p>
                     <input class="form-input" type="email" placeholder="Enter your email" name="email" required>
@@ -63,8 +63,8 @@
                     <input class="form-checkbox" type="checkbox" required>
                     <span class="form-checkbox-label">Remember me next time</span>
                 </label> --}}
-                <button class="form-btn primary-default-btn transparent-btn">Sign in</button>
-                <a class="link-info forget-link" href="{{ route('signup') }}">Register</a>
+                <button class="form-btn primary-default-btn transparent-btn">Login</button>
+                {{-- <a class="link-info forget-link" href="{{ route('signup') }}">Register</a> --}}
             </form>
 
         </article>

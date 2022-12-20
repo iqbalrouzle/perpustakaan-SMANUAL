@@ -47,7 +47,7 @@ class AuthController extends Controller
 
         try {
             $user->save();
-            return view('signin');
+            return view('admin.siswa');
         } catch (\Throwable $th) {
             return back()->withInput($request->only('email', 'remember'))->with('error', 'Gagal Register');
         }

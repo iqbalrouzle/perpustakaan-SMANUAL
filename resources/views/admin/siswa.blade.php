@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Daftar Buku | Perpustakaan SMA NU AL MA'RUF</title>
+    <title>Daftar Siswa | Perpustakaan SMA NU AL MA'RUF</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('img/SMA/logo smanual.png') }}">
@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active " href="{{ route('view.buku.2') }}">
+                    <a class="nav-link " href="{{ route('view.buku.2') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             📚
@@ -70,7 +70,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="{{ route('view.siswa') }}">
+                    <a class="nav-link active " href="{{ route('view.siswa') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             👤
@@ -105,7 +105,7 @@
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- TOP NAVBAR START -->
         <div class="d-flex justify-content-end flex-row py-2 my-2 mx-3">
-            <form action={{ route('logout') }} method="POST">
+            <form class="d-flex justify-content-end" action="{{ route('logout') }}" method="post">
                 @csrf
                 <button type="submit" value="logout" class="btn btn-danger">Keluar</button>
             </form>
@@ -118,19 +118,19 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>Daftar Buku</h6>
+                            <h6>Daftar Siswa</h6>
 
                             <div class="row">
                                 <div class="col-2">
-                                    <a class="btn btn-primary mb-2" href="{{ route('view.tambah.buku.2') }}">Tambah
-                                        Buku</a>
+                                    <a class="btn btn-primary mb-2" href="{{ route('view.signup') }}">Tambah
+                                        Siswa</a>
                                 </div>
-
 
                                 <div class="col-2">
                                     <form action="#" method="get">
                                         <div class="input-group mb-3">
-                                            {{-- TODO: pencarian --}}
+                                            {{-- <button class="btn btn-success" type="submit">Semua
+                                                Pegawai</button> --}}
                                         </div>
                                     </form>
                                 </div>
@@ -159,61 +159,40 @@
                                     aria-label="Close"></button>
                             </div>
                         @endif
-                        @if (Session::has('error'))
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                {{ Session::get('error') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
-                        @endif
 
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
-                                @if ($buku->isNotEmpty())
-                                    </table>
+                                @if ($user->isNotEmpty())
                                     <table class="table table-striped table-hover align-items-center mb-0">
                                         <thead>
                                             <tr>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    No.</th>
+                                                    No</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    Nama Buku</th>
+                                                    Nama Siswa</th>
                                                 <th
                                                     class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    Nama Pengarang</th>
-                                                <th
-                                                    class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    Penerbit</th>
-                                                <th
-                                                    class="text-start text-uppercase text-dark text-xs font-weight-bolder  ps-2">
-                                                    Tahun Terbit</th>
+                                                    Email Siswa</th>
                                                 <th
                                                     class="text-end text-uppercase text-dark text-xs font-weight-bolder  ps-2">
                                                     Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($buku as $pgl)
+                                            @foreach ($user as $sw)
                                                 <tr>
                                                     <td class="text-center text-dark font-weight-bold">
                                                         {{ $loop->index + 1 }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgl->nama_buku }}</td>
+                                                        {{ $sw->name }}</td>
                                                     <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgl->pengarang }}</td>
-                                                    <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgl->penerbit }}</td>
-                                                    <td class="text-start text-dark font-weight-bold">
-                                                        {{ $pgl->tahun_terbit }}</td>
+                                                        {{ $sw->email }}</td>
                                                     <td class="text-end">
-                                                        <a class="btn btn-warning btn-sm text-dark"
-                                                            style="color: #F6F5FC"
-                                                            href="{{ route('view.edit.buku.2', $pgl->id) }}">🔍
-                                                            Edit</a>
-                                                        <form action={{ route('hapus.buku', $pgl->id) }}
+                                                        <form action={{ route('delete_siswa', $sw->id) }}
                                                             method="POST">
+                                                            @method('delete');
                                                             @csrf
                                                             <button class=" btn btn-danger btn-sm">
                                                                 <i class="fa fa-trash"></i>
@@ -225,15 +204,15 @@
                                             @endforeach
                                         @else
                                             <div>
-                                                <p class="card-text">Buku Tidak Ada!</p>
+                                                <p class="card-text">Siswa Tidak Ada!</p>
                                             </div>
                                 @endif
                                 </tbody>
                                 </table>
                             </div>
-                            <div class="d-flex justify-content-end">
-                                {{-- {{ $buku->links() }} --}}
-                            </div>
+                            {{-- <div class="d-flex justify-content-end">
+                                {{ $siswa->links() }}
+                            </div> --}}
                         </div>
                     </div>
                 </div>

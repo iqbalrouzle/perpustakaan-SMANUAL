@@ -46,7 +46,7 @@
                     </div>
                 @endif
                 <label class="form-label-wrapper">
-                    <h1 class="sign-up__title">Sign Up</h1>
+                    <h1 class="sign-up__title">Tambah Siswa Baru</h1>
                     <p class="sign-up__subtitle">Silahkan Isi Identitas Anda</p>
                     </div>
                     <p class="form-label">Name <span class="fw-bold" style="color: red">*</span></p>
@@ -62,9 +62,8 @@
                     <input class="form-input" type="password" placeholder="Enter your password" name="password"
                         required>
                 </label>
-                <a class="link-info forget-link" href="{{ route('login') }}">SignIn</a>
-                <button class="form-btn primary-default-btn transparent-btn" type="submit" name="submit">Sign
-                    Up</button>
+                <button class="form-btn primary-default-btn transparent-btn" type="submit"
+                    name="submit">Simpan</button>
             </form>
         </article>
     </main>

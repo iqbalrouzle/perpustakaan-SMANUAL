@@ -22,7 +22,7 @@ Route::redirect('/', '/login');
 Route::get('/user/dashboard', [AuthController::class, 'dashboardUser'])->name('dashboard.user')->middleware(['auth', 'user']);
 Route::get('/admin/dashboard', [AuthController::class, 'dashboardAdmin'])->name('dashboard.admin')->middleware(['auth', 'admin']);
 
-Route::get('/signup', [AuthController::class, 'showSignup'])->name('view.signup');
+Route::get('/signup-admin', [AuthController::class, 'showSignup'])->name('view.signup');
 Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
 
 /* Autentikasi */
@@ -53,4 +53,9 @@ Route::get('/pinjam2', [BookController::class, 'viewPinjamBuku2'])->name('view.p
 Route::post('/pinjam2/{peminjaman}', [BookController::class, 'hapusPeminjaman'])->name('pinjam.buku.2')->middleware('auth');
 Route::get('/pengembalian2', [BookController::class, 'viewPengembalianBuku2'])->name('view.pengembalian.buku.2')->middleware('auth');
 Route::post('/pengembalian2/{pengembalian}', [BookController::class, 'pengembalianBuku'])->name('pengembalian.buku.2')->middleware('auth');
-Route::post('hapuspengembalian/en2/{pengembalian}', [BookController::class, 'hapusPengembalian'])->name('hapuspengembalian.buku.2')->middleware('auth');;
+Route::post('hapuspengembalian/pengembalian2/{pengembalian}', [BookController::class, 'hapusPengembalian'])->name('hapuspengembalian.buku.2')->middleware('auth');
+
+// Route Siswa
+Route::get('/admin/siswa', [BookController::class, 'viewSiswa'])->name('view.siswa')->middleware('auth', 'admin');
+
+Route::delete('/admin/{user}', [BookController::class, 'destroy'])->name('delete_siswa');
