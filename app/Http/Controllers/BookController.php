@@ -168,7 +168,7 @@ class BookController extends Controller
     {
         $user = $request->user();
         $buku = Book::count();
-        $peminjaman = Peminjaman::count();
+        $peminjaman = Peminjaman::where('user_id', $user->id)->count();
         return view('user.dashboard2', compact('user', 'buku', 'peminjaman'));
     }
 
@@ -217,7 +217,7 @@ class BookController extends Controller
     public function viewPengembalianBuku2(Request $request)
     {
         $user = $request->user();
-        $pengembalian = Pengembalian::get();
+        $pengembalian = Pengembalian::where('user_id', $user->id)->get();
 
         if ($user->peran == 'admin') {
             return view('admin.pengembalian_buku2', compact('user', 'pengembalian'));

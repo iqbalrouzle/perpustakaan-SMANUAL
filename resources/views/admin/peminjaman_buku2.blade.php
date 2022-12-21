@@ -41,7 +41,7 @@
             <a class="navbar-brand m-0" href="{{ route('view.dashboard2.user') }}" target="_blank">
                 <img src="../img/SMA/logo smanual.png" class="navbar-brand-img h-100" alt="logo" width="15%"
                     height="40%">
-                <span class="ms-1 fs-5 font-weight-bold">Dasbor Admin</span>
+                <span class="ms-1 fs-5 font-weight-bold">Dashboard Admin</span>
             </a>
         </div>
         {{-- LOGO END --}}
@@ -57,7 +57,7 @@
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             💻
                         </div>
-                        <span class="nav-link-text ms-1">Dasbor</span>
+                        <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">

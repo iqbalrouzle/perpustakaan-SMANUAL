@@ -41,7 +41,7 @@
             <a class="navbar-brand m-0" href="{{ route('view.dashboard2.admin') }}" target="_blank">
                 <img src="../img/SMA/logo smanual.png" class="navbar-brand-img h-100" alt="logo" width="15%"
                     height="40%">
-                <span class="ms-1 fs-5 font-weight-bold">Dasbor Admin</span>
+                <span class="ms-1 fs-5 font-weight-bold">Dashboard Admin</span>
             </a>
         </div>
         {{-- LOGO END --}}
@@ -57,7 +57,7 @@
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             💻
                         </div>
-                        <span class="nav-link-text ms-1">Dasbor</span>
+                        <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -126,29 +126,7 @@
                                         Siswa</a>
                                 </div>
 
-                                <div class="col-2">
-                                    <form action="#" method="get">
-                                        <div class="input-group mb-3">
-                                            {{-- <button class="btn btn-success" type="submit">Semua
-                                                Pegawai</button> --}}
-                                        </div>
-                                    </form>
-                                </div>
 
-                                <div class="col-8">
-                                    <div class="row justify-content-end">
-                                        <div class="col-6">
-                                            <form action="#" method="get">
-                                                <div class="input-group mb-3">
-                                                    {{-- <input type="text" class="form-control fw-bold"
-                                                        placeholder="Cari pagawai..." name="search_pegawai"
-                                                        value="{{ request('search_pegawai') }}"> --}}
-                                                    {{-- <button class="btn btn-primary" type="submit">Temukan</button> --}}
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
@@ -192,7 +170,7 @@
                                                     <td class="text-end">
                                                         <form action={{ route('delete_siswa', $sw->id) }}
                                                             method="POST">
-                                                            @method('delete');
+                                                            @method('delete')
                                                             @csrf
                                                             <button class=" btn btn-danger btn-sm">
                                                                 <i class="fa fa-trash"></i>

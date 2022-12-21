@@ -22,8 +22,8 @@ Route::redirect('/', '/login');
 Route::get('/user/dashboard', [AuthController::class, 'dashboardUser'])->name('dashboard.user')->middleware(['auth', 'user']);
 Route::get('/admin/dashboard', [AuthController::class, 'dashboardAdmin'])->name('dashboard.admin')->middleware(['auth', 'admin']);
 
-Route::get('/signup-admin', [AuthController::class, 'showSignup'])->name('view.signup');
 Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
+Route::get('/signup-admin', [AuthController::class, 'showSignup'])->name('view.signup');
 
 /* Autentikasi */
 Route::get('/login', [AuthController::class, 'viewLogin'])->name('view.login')->middleware('guest');

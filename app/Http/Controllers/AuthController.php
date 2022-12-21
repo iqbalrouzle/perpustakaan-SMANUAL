@@ -31,14 +31,13 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('signup')->with('error', 'Gunakan email yang valid dan panjang password minimal 6 karakter!');
+            return redirect()->route('view.signup')->with('error', 'Gunakan email yang valid dan panjang password minimal 6 karakter!');
         }
 
         $is_email_exists = User::where('email', $request->email)->first();
         if ($is_email_exists) {
-            return redirect('signup')->with('error', 'Email sudah terdaftar!');
+            return redirect()->route('view.signup')->with('error', 'Email sudah terdaftar!');
         }
-
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -47,7 +46,7 @@ class AuthController extends Controller
 
         try {
             $user->save();
-            return view('admin.siswa');
+            return redirect()->route('view.siswa');
         } catch (\Throwable $th) {
             return back()->withInput($request->only('email', 'remember'))->with('error', 'Gagal Register');
         }
